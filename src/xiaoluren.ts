@@ -56,3 +56,55 @@ export const XIAO_PALACE_INFO: Record<XiaoPalaceName, XiaoPalace> = {
     advice: "不宜开新局，重在收心复盘，改日再举。",
   },
 };
+
+function countPalace(start: number, steps: number): number {
+  return (start + steps - 1) % 6;
+}
+
+export type XiaoLuRenChart = {
+  kind: "xiaoluren";
+  question: string;
+  toneMode: ToneMode;
+  time: PillarTime;
+  monthIndex: number;
+  dayIndex: number;
+  hourIndex: number;
+  monthPalace: XiaoPalace;
+  dayPalace: XiaoPalace;
+  hourPalace: XiaoPalace;
+  palaces: XiaoPalace[];
+  summary: string;
+};
+
+export function castXiaoLuRen(input: {
+  question: string;
+  date: Date;
+  toneMode?: ToneMode;
+}): XiaoLuRenChart {
+  const time = getPillarTime(input.date);
+  const monthIndex = countPalace(0, time.lunarMonth);
+  const dayIndex = countPalace(monthIndex, time.lunarDay);
+  const hourIndex = countPalace(dayIndex, time.timeZhiNum);
+
+  const palaces = XIAO_PALACES.map((name) => XIAO_PALACE_INFO[name]);
+  const monthPalace = palaces[monthIndex];
+  const dayPalace = palaces[dayIndex];
+  const hourPalace = palaces[hourIndex];
+
+  const summary = `${time.lunarText}。农历${time.lunarMonth}月${time.lunarDay}日${time.timeZhi}时，从大安起月落「${monthPalace.name}」，顺数日落「${dayPalace.name}」，再数时落「${hourPalace.name}」（${hourPalace.nature}）。断事以时落为主，月日落为辅。`;
+
+  return {
+    kind: "xiaoluren",
+    question: input.question.trim(),
+    toneMode: input.toneMode ?? "default",
+    time,
+    monthIndex,
+    dayIndex,
+    hourIndex,
+    monthPalace,
+    dayPalace,
+    hourPalace,
+    palaces,
+    summary,
+  };
+}
