@@ -1,0 +1,9 @@
+{
+  "name": "zhouyi-skill",
+  "private": true,
+  "type": "module",
+  "description": "Instant 六爻 / 大六壬 / 小六壬 casting from inquiry time",
+  "dependencies": {
+    "lunar-javascript": "^1.7.7"
+  }
+}
