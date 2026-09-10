@@ -32,7 +32,7 @@ Solar → lunar: use `lunar-javascript` (`Solar.fromYmdHms`) or an equivalent ca
 | 夏至/小暑 | 未 | 小吉 |
 | 大暑/立秋 | 午 | 胜光 |
 | 处暑/白露 | 巳 | 太乙 |
-| 秋分/寒露 | 辰 | 天罢 |
+| 秋分/寒露 | 辰 | 天罡 |
 | 霜降/立冬 | 卯 | 太冲 |
 | 小雪/大雪 | 寅 | 功曹 |
 | 冬至/小寒 | 丑 | 大吉 |

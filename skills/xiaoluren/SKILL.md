@@ -19,7 +19,7 @@ Clock from parent `SKILL.md`.
 数法（宫序从 0=大安 起，步数含起点）：
 
 ```
-monthIndex = (lunarMonth - 1) % 6
+monthIndex = (lunarMonth - 1) % 6          # 从大安起，数农历月
 dayIndex   = (monthIndex + lunarDay - 1) % 6
 hourIndex  = (dayIndex + timeZhiNum - 1) % 6
 ```

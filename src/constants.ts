@@ -89,7 +89,7 @@ export function liuqinOf(self: Wuxing, other: Wuxing): "父母" | "兄弟" | "�
   return "官鬼";
 }
 
-export const LIU_SHEN = ["青龙", "朱雀", "勾陈", "螳蛇", "白虎", "玄武"] as const;
+export const LIU_SHEN = ["青龙", "朱雀", "勾陈", "螣蛇", "白虎", "玄武"] as const;
 
 export function liuShenStart(dayGan: string): number {
   const g = dayGan as Gan;

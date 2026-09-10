@@ -14,6 +14,17 @@ These are the same algorithms used by the **AI周易推演** app (inspired by [W
 
 Load `SKILL.md`, then the matching file under `skills/`. TypeScript sources in `src/` are executable references.
 
+```ts
+import { parseInquiryTime, castLiuYao, castDaLiuRen, castXiaoLiuRen } from "./src";
+
+const date = parseInquiryTime("2026-09-10", "19:30"); // inquiry time
+const liuyao = castLiuYao({ question: "出行是否顺利", date, method: "time" });
+const luren = castDaLiuRen({ question: "此事吉凶", date });
+const xiao = castXiaoLiuRen({ question: "今日宜否出门", date });
+```
+
+Requires `lunar-javascript` for 干支 / 农历 / 节气.
+
 ## Disclaimer
 
 Cultural study and entertainment. Not medical, legal, or investment advice.
