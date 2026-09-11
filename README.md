@@ -8,7 +8,7 @@ Arts:
 - **大六壬** — 月将加时, 四课三传, 十二天将
 - **小六壬** — 月日时落宫（大安…空亡）
 
-These are the same algorithms used by the **AI周易推演** app: [Haizhu998/AI-Zhouyi](https://github.com/Haizhu998/AI-Zhouyi) (inspired by [WuXieXie/AiTaoist](https://github.com/WuXieXie/AiTaoist)).
+These are the same algorithms used by the **AI周易推演** app: [Haizhu998/AItuisuan](https://github.com/Haizhu998/AItuisuan) (inspired by [WuXieXie/AiTaoist](https://github.com/WuXieXie/AiTaoist)).
 
 ## For agents
 
